@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/all.min.css" rel="stylesheet" >
+    <link href="/static/bootstrap.min.css" rel="stylesheet" >
+    <link
+      rel="stylesheet"
+      href="/static/swiper-bundle.min.css"
+    />
+    <title>Chi tiết sản phẩm</title>
+    
+    <style>
+
+      .comment a{
+          text-decoration: none;
+          padding-left: 10px;
+          padding-right: 10px;
+          border-right: 1px solid gray;
+      }
+      .rating {
+        color: rgb(199, 199, 199);
+      }
+      .rating .checked {
+        color: orange;
+      }
+      .green-tea{
+        color: #008000 !important;
+      }
+        .header{
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            background-color: #004315;
+        }
+        .category-nav{
+            border-top: #004315 2px solid;
+        }
+        .item-cart{
+            transition: opacity 0.3s, transform 0.3s, background-color 0.3s, -webkit-transform 0.3s;
+        }
+        .item-cart .card{
+            box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+        }
+        .item-cart .card img{
+            height: 250px;
+        }
+        .item-cart:hover{
+            transform: scale(1) translateZ(0) translateY(0) !important;
+            margin-top: -10px;
+        }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .swiper-slide {
+        background-size: cover;
+        background-position: center;
+      }
+
+      .mySwiper2 {
+        height: 80%;
+        width: 100%;
+      }
+
+      .mySwiper {
+        height: 20%;
+        box-sizing: border-box;
+        padding: 10px 0;
+      }
+
+      .mySwiper .swiper-slide {
+        width: 25%;
+        height: 100%;
+        opacity: 0.4;
+      }
+
+      .mySwiper .swiper-slide-thumb-active {
+        opacity: 1;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+</head>
+<body>
+    <div class="container-fluid header">
+        <div class="container">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom pe-2 ps-2">
+                <a href="/" class="d-flex align-items-center col-lg-1 mb-2 mb-md-0 text-white text-decoration-none">
+                    <i class="fa-solid fa-leaf"></i>&nbsp; Trà Vấp
+                </a>
+          
+                <ul class="nav col-lg-6 col-md-auto mb-2 justify-content-center mb-md-0 m-auto">
+                  <li><a href="#" class="nav-link px-2 link-secondary">Trang chủ</a></li>
+                  <li><a href="#" class="nav-link px-2 link-light">Sản phẩm trà</a></li>
+                  <li><a href="#" class="nav-link px-2 link-light">Dụng cụ trà</a></li>
+                  <li><a href="#" class="nav-link px-2 link-light">Blog</a></li>
+                </ul>
+
+                <form class=" col-lg-2 form-inline md-form form-sm d-flex">
+                    <input class="form-control form-control-sm ml-3 w-75 me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <div class="col-lg-3 text-end">
+                  <a class="nav-link waves-effect text-white position-relative d-inline pe-0 me-5" title="Giỏ hàng">
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> 1 </span>
+                    <i class="fas fa-shopping-cart" style="font-size: 20px;
+                    vertical-align: middle;"></i>
+                  </a>
+                  <button type="button" class="btn btn-outline-light me-2" title="Tài khoản"><i class="fa-regular fa-user"></i></button>
+                    <button type="button" class="btn btn-outline-light me-2">Đăng xuất</button>
+                  <!-- <button type="button" class="btn btn-outline-light me-2">Đăng nhập</button>
+                  <button type="button" class="btn btn-secondary">Đăng kí</button> -->
+                </div>
+              </header>    
+        </div>
+    </div>
+    <div class="container-fluid bg-light">
+        <div class="container pt-2 pb-2">
+            <nav aria-label="breadcrumb" >
+                <ol class="breadcrumb ">
+                  <li class="breadcrumb-item"><a href="#" class="link-secondary">Trang chủ</a></li>
+                  <li class="breadcrumb-item"><a href="#" class="link-secondary">Sản phẩm trà</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Trà móc câu Thái Nguyên</li>
+                </ol>
+              </nav>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-light pt-2 pb-5">
+      <div class="container bg-white rounded row m-auto ">
+        <div class="col-5 p-3">
+          <div
+          style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+          class="swiper mySwiper2"
+        >
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-1.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-2.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-3.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-1.jpg" />
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <div thumbsSlider="" class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-1.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-2.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-3.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-1.jpg" />
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="col-7 p-3 detail">
+          <h2>Trà Móc Câu Đặc Biệt • 600.000đ / 1kg</h2>
+          <div class="rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="text-dark"> &nbsp; (1 đánh giá của khách)</span>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-7">
+              <div>
+                <h5 class="fs-6">MỜI BẠN CHỌN QUY CÁCH ĐÓNG GÓI</h5>
+                <div class="row align-middle">
+                  <div class="col-4 fs-6 pt-2">ĐÓNG GÓI <hr></div>
+                  <div class="col-8 ">
+                    <select class="form-select" aria-label="Default select example" style="width:70%">
+                      <option selected>100g</option>
+                      <option value="1">200g</option>
+                      <option value="2">300g</option>
+                      <option value="3">1kg</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <form class="d-flex justify-content-left">
+                    <!-- Default input -->
+                    <input type="number" min="1" value="1" aria-label="Search" class="form-control me-3" style="width: 100px">
+                    <button class="btn btn-success btn-md my-0 p waves-effect waves-light text-uppercase fw-bold" style="color: #f5f5f5;" type="submit">Thêm vào giỏ hàng
+                      <i class="fas fa-shopping-cart ml-1"></i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-5 border rounded p-4">
+              <div class="col-inner">
+                <div class="is-border" style="border-radius:5px;border-width:1px 1px 1px 1px;">
+                </div>
+                <div id="text-2530259630" class="text">
+                <p style="text-align: left;"><a href="https://loctancuong.vn/wp-content/uploads/2021/09/icon-checked.png"><img class="alignnonewp-image-10374" src="https://loctancuong.vn/wp-content/uploads/2021/09/icon-checked.png" alt="" width="20" height="20"></a>&nbsp;<span style="color: #000000; font-family: helvetica, arial, sans-serif;"><span style="font-size: 14px;">Trà không chất bảo quản, hương liệu, phẩm màu</span></span></p>
+                <p style="text-align: left;"><span style="color: #000000; font-family: helvetica, arial, sans-serif;"><span style="font-size: 14px;"><a href="https://loctancuong.vn/wp-content/uploads/2021/09/icon-checked.png"><img class="alignnonewp-image-10374" src="https://loctancuong.vn/wp-content/uploads/2021/09/icon-checked.png" alt="" width="20" height="20"></a>&nbsp;Dụng cụ trà chính hãng</span></span></p>
+                <p style="text-align: left;"><img class="alignnonewp-image-10375" src="https://loctancuong.vn/wp-content/uploads/2021/09/icon-money-back.png" alt="" width="24" height="24">&nbsp;<span style="font-family: helvetica, arial, sans-serif; color: #000000; font-size: 14px;">Đổi trả - Hoàn tiền 100% nếu bạn không hài lòng</span></p>
+                <p style="text-align: left;"><img class="alignnonewp-image-10376" src="https://loctancuong.vn/wp-content/uploads/2021/09/icon-fast-delivery.png" alt="" width="23" height="23"> <span style="color: #000000; font-family: helvetica, arial, sans-serif; font-size: 14px;">Giao hàng nhanh 1 giờ nội thành Hà Nội &amp; TP.HCM</span></p>
+                <style>
+                #text-2530259630 {
+                line-height: 1.25;
+                }
+                </style>
+                </div>
+                </div>
+            </div>
+          </div>
+       
+          <div class="bg-light border rounded p-2 m-2">
+            <div class="col-inner">
+              <span style="font-size: 90%;"><strong><span style="text-align: justify;"><span style="color: #000000; font-family: helvetica, arial, sans-serif;">THÔNG TIN SẢN PHẨM</span></span></strong></span>
+              <div class="product-short-description">
+              <p style="text-align: justify;"><span style="font-family: 'times new roman', times, serif; color: #000000; font-size: 95%;"><strong><img class="alignnone wp-image-10344" src="https://loctancuong.vn/wp-content/uploads/2021/09/icon-657.png" alt="" width="10" height="10"> Thương hiệu</strong>: Lộc Tân Cương</span><br>
+              <span style="font-family: 'times new roman', times, serif; font-size: 95%; color: #000000;"><strong><img class="alignnone wp-image-10344" src="https://loctancuong.vn/wp-content/uploads/2021/09/icon-657.png" alt="" width="10" height="10"> Vùng nguyên liệu</strong>: Tân Cương – Thái Nguyên</span><br>
+              <span style="font-family: 'times new roman', times, serif; font-size: 95%; color: #000000;"><strong><img class="alignnone wp-image-10344" src="https://loctancuong.vn/wp-content/uploads/2021/09/icon-657.png" alt="" width="10" height="10"> Hương vị</strong>: Thơm cốm tự nhiên, chát dịu, hậu ngọt sâu</span><br>
+              <span style="font-family: 'times new roman', times, serif; font-size: 95%; color: #000000;"><strong><img class="alignnone wp-image-10344" src="https://loctancuong.vn/wp-content/uploads/2021/09/icon-657.png" alt="" width="10" height="10"> Cách hái</strong>: 1 đọt + 1 – 2 lá non</span><br>
+              <span style="font-family: 'times new roman', times, serif; font-size: 95%; color: #000000;"><strong><img class="alignnone wp-image-10344" src="https://loctancuong.vn/wp-content/uploads/2021/09/icon-657.png" alt="" width="10" height="10"> Quy cách đóng gói</strong>: 100g, 250g, 250g tép 500g</span><br>
+              <span style="font-family: 'times new roman', times, serif; font-size: 95%; color: #000000;"><strong><a href="https://loctancuong.vn/wp-content/uploads/2021/09/icon-657.png"><img class="alignnone wp-image-10344" src="https://loctancuong.vn/wp-content/uploads/2021/09/icon-657.png" alt="" width="10" height="10"></a> Hạn sử dụng</strong>: 24 tháng kể từ ngày sản xuất</span></p>
+              </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <div class="container-fluit bg-light pt-4 pb-5">
+      <div class="container bg-white rounded row m-auto p-3">
+        <h4 class="fs-5 fw-bold text-capitalize green-tea text-center" >Sản phẩm tương tự</h4>
+            <div class="row mt-3 mb-3 ">
+              <div class="col-3 item-cart mb-4">
+                  <a href="#" class="text-decoration-none link-dark text-center">
+                      <div class="card">
+                          <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-1.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title text-wrap fs-6">Trà Móc Câu Đặc Biệt • 600.000đ / 1kg</h5>
+                          </div>
+                        </div>
+                  </a>
+              </div>
+              <div class="col-3 item-cart ">
+                  <a href="#" class="text-decoration-none link-dark text-center">
+                      <div class="card">
+                          <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-1.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title text-wrap fs-6">Trà Móc Câu Đặc Biệt • 600.000đ / 1kg</h5>
+                          </div>
+                        </div>
+                  </a>
+              </div>
+              <div class="col-3 item-cart ">
+                  <a href="#" class="text-decoration-none link-dark text-center">
+                      <div class="card">
+                          <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-1.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title text-wrap fs-6">Trà Móc Câu Đặc Biệt • 600.000đ / 1kg</h5>
+                          </div>
+                        </div>
+                  </a>
+              </div>
+              <div class="col-3 item-cart ">
+                  <a href="#" class="text-decoration-none link-dark text-center">
+                      <div class="card">
+                          <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-1.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title text-wrap fs-6">Trà Móc Câu Đặc Biệt • 600.000đ / 1kg</h5>
+                          </div>
+                        </div>
+                  </a>
+              </div>
+            </div>
+      </div>
+    </div>
+
+    <div class="container-fluit bg-light pt-4 pb-5">
+      <div class="container bg-white rounded row m-auto pt-3">
+        <h5>Nhận xét</h5>
+        <div class="comment ">
+          <a href="#">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            Rất tốt
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            Tốt
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            Trung bình
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            Không tệ
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-star"></i>
+            Rất tệ
+          </a>
+          
+          <form action="#" class="row mt-2 mb-2">
+            <input type="hidden" name="rating" value="" >
+            <div class="col-6">
+              <input type="text" name="name" placeholder="Họ tên" required class="form-control mb-2">
+            </div>
+            <div class="col-6">
+              <input type="email" name="email" placeholder="Email" required class="form-control mb-2">
+            </div>
+            <div class="col-12">
+              <textarea name="comment" id="" cols="20" rows="3" placeholder="Viết nhận xét ..." required class="col-8 form-control mb-2"></textarea>
+            </div>
+            <div class="col-12 text-end">
+              <button type="submit" class="btn btn-primary">Gửi</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  
+
+  <div class="container-fluid bg-dark text-white">
+      <div class="container footer">
+          <footer>
+              <div class="row  mb-4 pt-5 pb-5">
+                  <div class="col-4">
+                      <h2 class="fs-5" style="color: #03ea4c;">CÔNG TY TNHH TRÀ VẤP</h2>
+                      <p class=" text-white fw-bold"> <small>
+                          - MST: 0312393412 <br>
+                          - Nhà máy SX: Xã Tân Cương, TP.Thái Nguyên <br>
+                          - Số ID: 101629108</small>
+                      </p>
+                  </div>
+                  <div class="col-4">
+                      <h2 class="fs-5" style="color: #03ea4c;">GỌI ĐIỆN TƯ VẤN - ĐẶT HÀNG</h2>
+                      <p class=" text-white "> <small>
+                          - ĐT Hà Nội: (024) 1111 4747<br>
+                          - ĐT TP.HCM: (028) 1111 4747<br>
+                          - HOTLINE / ZALO: 0933 111 589<br>
+
+                          - Email: travap@gmail.com<br>
+                          - Website: https://travap.vn</small>
+                      </p>
+                  </div>
+                  <div class="col-4">
+                      <h2 class="fs-5" style="color: #03ea4c;">HỖ TRỢ KHÁCH HÀNG</h2>
+                      <p class=" text-white"> <small>
+                          • Hướng dẫn mua hàng<br>
+                          • Chính sách thanh toán & giao nhận<br>
+                          • Chính sách bảo hành<br>
+                          • Chính sách bảo mật thông tin<br>
+                          • Chính sách đổi hàng<br>
+                          • Cam kết hoàn tiền 100%<br>
+                      </small>
+                      </p>
+                  </div>
+              </div>
+          </footer>
+      </div>
+  </div>
+    <script src="/static/swiper-bundle.min.js"></script>
+    <script src="static/bootstrap.min.js" ></script>
+    <script src="static/jquery.3.6.min.js" ></script>
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper(".mySwiper2", {
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+          swiper: swiper,
+        },
+      });
+    </script>
+</body>
+</html>

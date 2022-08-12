@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/all.min.css" rel="stylesheet" >
+    <link href="/static/bootstrap.min.css" rel="stylesheet" >
+    <title>Danh sách sản phẩm</title>
+    <style>
+      .green-tea{
+        color: #008000 !important;
+      }
+        .header{
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            background-color: #004315;
+        }
+        .category-nav{
+            border-top: #004315 2px solid;
+        }
+        .item-cart{
+            transition: opacity 0.3s, transform 0.3s, background-color 0.3s, -webkit-transform 0.3s;
+        }
+        .item-cart .card{
+            box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+        }
+        .item-cart .card img{
+            height: 250px;
+        }
+        .item-cart:hover{
+            transform: scale(1) translateZ(0) translateY(0) !important;
+            margin-top: -10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid header">
+        <div class="container">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom pe-2 ps-2">
+                <a href="/" class="d-flex align-items-center col-lg-1 mb-2 mb-md-0 text-white text-decoration-none">
+                    <i class="fa-solid fa-leaf"></i>&nbsp; Trà Vấp
+                </a>
+          
+                <ul class="nav col-lg-6 col-md-auto mb-2 justify-content-center mb-md-0 m-auto">
+                  <li><a href="#" class="nav-link px-2 link-secondary">Trang chủ</a></li>
+                  <li><a href="#" class="nav-link px-2 link-light">Sản phẩm trà</a></li>
+                  <li><a href="#" class="nav-link px-2 link-light">Dụng cụ trà</a></li>
+                  <li><a href="#" class="nav-link px-2 link-light">Blog</a></li>
+                </ul>
+
+                <form class=" col-lg-2 form-inline md-form form-sm d-flex">
+                    <input class="form-control form-control-sm ml-3 w-75 me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <div class="col-lg-3 text-end">
+                  <a class="nav-link waves-effect text-white position-relative d-inline pe-0 me-5" title="Giỏ hàng">
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> 1 </span>
+                    <i class="fas fa-shopping-cart" style="font-size: 20px;
+                    vertical-align: middle;"></i>
+                  </a>
+                  <button type="button" class="btn btn-outline-light me-2" title="Tài khoản"><i class="fa-regular fa-user"></i></button>
+                    <button type="button" class="btn btn-outline-light me-2">Đăng xuất</button>
+                  <!-- <button type="button" class="btn btn-outline-light me-2">Đăng nhập</button>
+                  <button type="button" class="btn btn-secondary">Đăng kí</button> -->
+                </div>
+              </header>    
+        </div>
+    </div>
+    <div class="container-fluid bg-light">
+        <div class="container pt-2 pb-5">
+            <nav aria-label="breadcrumb" class="row">
+                <ol class="breadcrumb col-7">
+                  <li class="breadcrumb-item"><a href="#" class="link-secondary">Trang chủ</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Sản phẩm trà</li>
+                </ol>
+                <div class="col-2">Hiển thị tất cả 5 kết quả</div>
+                <div class="col-3">
+                  <select class="form-select w-100" >
+                    <option selected>Thứ tự:</option>
+                    <option value="1">Giá thấp - cao</option>
+                    <option value="2">Giá cao - thấp</option>
+                    <option value="3">Bán chạy</option>
+                  </select>
+                </div>
+              </nav>
+
+              <div class="row mt-5">
+                <div class="col-9"> 
+                  <h4 class="fs-4 fw-bold text-capitalize green-tea text-center" >Sản phẩm trà</h4>
+                  <div class="row mt-3 mb-3 ">
+                    <div class="col-4 item-cart mb-4">
+                        <a href="#" class="text-decoration-none link-dark text-center">
+                            <div class="card">
+                                <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-1.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title text-wrap fs-6">Trà Móc Câu Đặc Biệt • 600.000đ / 1kg</h5>
+                                </div>
+                              </div>
+                        </a>
+                    </div>
+                    <div class="col-4 item-cart ">
+                        <a href="#" class="text-decoration-none link-dark text-center">
+                            <div class="card">
+                                <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-1.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title text-wrap fs-6">Trà Móc Câu Đặc Biệt • 600.000đ / 1kg</h5>
+                                </div>
+                              </div>
+                        </a>
+                    </div>
+                    <div class="col-4 item-cart ">
+                        <a href="#" class="text-decoration-none link-dark text-center">
+                            <div class="card">
+                                <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-1.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title text-wrap fs-6">Trà Móc Câu Đặc Biệt • 600.000đ / 1kg</h5>
+                                </div>
+                              </div>
+                        </a>
+                    </div>
+                    <div class="col-4 item-cart ">
+                        <a href="#" class="text-decoration-none link-dark text-center">
+                            <div class="card">
+                                <img src="/image/tra-moc-cau-dac-biet-loc-tan-cuong-3-1.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title text-wrap fs-6">Trà Móc Câu Đặc Biệt • 600.000đ / 1kg</h5>
+                                </div>
+                              </div>
+                        </a>
+                    </div>
+                   
+                    
+                  </div>
+                </div>
+                <div class="col-3">
+                  <h5 >Danh mục sản phẩm </h5>
+                  <div><span class="border-top border-4 ps-5 "></span></div>
+                  <ul class="list-group">
+                    <li class="list-group-item"><a class="dropdown-item" href="#">Trà Thái Nguyên</a></li>
+                    <li class="list-group-item"><a class="dropdown-item" href="#">Trà ướp hoa</a></li>
+                    <li class="list-group-item"><a class="dropdown-item" href="#">Trà ôlong</a></li>
+                  </ul>
+                  
+                </div>
+              </div>
+        </div>
+        
+    </div>
+<div class="container-fluid bg-dark text-white">
+    <div class="container ">
+        <footer>
+            <div class="row  mb-4 pt-5 pb-5">
+                <div class="col-4">
+                    <h2 class="fs-5" style="color: #03ea4c;">CÔNG TY TNHH TRÀ VẤP</h2>
+                    <p class=" text-white fw-bold"> <small>
+                        - MST: 0312393412 <br>
+                        - Nhà máy SX: Xã Tân Cương, TP.Thái Nguyên <br>
+                        - Số ID: 101629108</small>
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h2 class="fs-5" style="color: #03ea4c;">GỌI ĐIỆN TƯ VẤN - ĐẶT HÀNG</h2>
+                    <p class=" text-white "> <small>
+                        - ĐT Hà Nội: (024) 1111 4747<br>
+                        - ĐT TP.HCM: (028) 1111 4747<br>
+                        - HOTLINE / ZALO: 0933 111 589<br>
+
+                        - Email: travap@gmail.com<br>
+                        - Website: https://travap.vn</small>
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h2 class="fs-5" style="color: #03ea4c;">HỖ TRỢ KHÁCH HÀNG</h2>
+                    <p class=" text-white"> <small>
+                        • Hướng dẫn mua hàng<br>
+                        • Chính sách thanh toán & giao nhận<br>
+                        • Chính sách bảo hành<br>
+                        • Chính sách bảo mật thông tin<br>
+                        • Chính sách đổi hàng<br>
+                        • Cam kết hoàn tiền 100%<br>
+                    </small>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+  
+    <script src="static/bootstrap.min.js" ></script>
+    <script src="static/jquery.3.6.min.js" ></script>
+
+</body>
+</html>

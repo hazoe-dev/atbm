@@ -1,0 +1,39 @@
+//hỏi xác thực user với user.toString() và public key
+		//tiếp tục tạo db xuống csdl với order verified = true, status = đang kiểm tra
+		//cập nhật info-bill = user.toString + order.toString()
+		OrderDao orderDao = new OrderDao(DbCon.getConnection());
+		Long orderId = orderDao.insertOrder(order);
+
+		
+		//Người dùng được active 1 public key 
+		//thì set public key field của user bằng key này.
+		//tạo cập khóa thì thêm khóa public key của người dùng vào bảng key với status là chưa kích hoạt=false
+		
+		//hỏi xác thực đơn hàng với user.toString + order.toString(), public key trong user = auth logging in 
+		//Xác thực thành công;
+		/*
+		 * Cách xác thực:
+		 * 1. hiển thị popup nhập public key người dùng
+		 * 2. Nhấn nút gửi: 
+		 * 	-hash (user(id-username-fullname-phone-address-status-role-public_key+key=secret): lấy user trong request session
+		 * 	-Dùng private key trong input người dùng nhập => mã hóa hashcode ở trên: thu được signature
+		 * 	-Gửi user và signature lên server
+		 * -----Client-End---------
+		 * 1. Lấy user người dùng gửi + key = secret 
+		 * 	-Thực hiện hash => thu được hashcode
+		 * 2. Dùng public key của người dùng mã hóa => Thu được hashcode'
+		 * 3. Thực hiện so sánh 2 mã hashcode => 
+		 * 	-Equal=> ok
+		 * 	-Not equal => Thông báo xác nhật user thất bại chuyển về trang checkout với msgAuth
+		 */
+		/*
+		 * Tương tự với: xác thực order: thông tin là order (id-total-shipcost-userid-note-date-verified-address-phone-fullname)
+		 */
+		/*
+		 * Có thể dùng giải thuật khác để mã hóa!
+		 * Hoặc chung 1 giải thuật.
+		 */
+		//+update order với status: đang giao
+		//+ insert order detail
+		//+ update quantity type of product
+		//+ hiển thị giao diện đơn hàng.
